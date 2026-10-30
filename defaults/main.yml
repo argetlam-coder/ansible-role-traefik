@@ -23,6 +23,12 @@ traefik_version: v3.7.16
 traefik_uid: ""
 traefik_gid: ""
 
+# Controls the user that the container runs as. Set to `0` to run as root.
+traefik_container_uid: "{{ traefik_uid }}"
+
+# Controls the group that the container runs as. Set to `0` to run as root.
+traefik_container_gid: "{{ traefik_gid }}"
+
 traefik_container_image: "{{ traefik_container_image_registry_prefix }}traefik:{{ traefik_container_image_tag }}"
 traefik_container_image_tag: "{{ traefik_version }}"
 traefik_container_image_registry_prefix: "{{ traefik_container_image_registry_prefix_upstream }}"

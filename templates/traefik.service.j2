@@ -34,7 +34,7 @@ ExecStartPre={{ devture_systemd_docker_base_host_command_docker }} create \
       --name={{ traefik_identifier }} \
       --log-driver=none \
       {% if not traefik_config_providers_docker_endpoint_is_unix_socket %}
-      --user={{ traefik_uid }}:{{ traefik_gid }} \
+      --user={{ traefik_container_uid }}:{{ traefik_container_gid }} \
       --cap-drop=ALL \
       {% endif %}
       --read-only \
